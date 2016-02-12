@@ -1,0 +1,137 @@
+@import "mixins.less";
+
+@base-font-size:14px;
+@font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+@white: #ffffff;
+@black:#000000;
+
+
+@light:300;
+@bold: 700;
+
+@img-url: '../images';
+/*@img-url:'/sf-images/default-source/2015/pricing';*/
+@row-spacing:40px;
+
+
+// Breakpoints
+// ------------------------- Source: http://blog.scur.pl/2012/06/variable-media-queries-less-css/
+@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+				~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+				~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+				~"only screen and (min-device-pixel-ratio: 1.5)";
+@mobile:      ~"only screen and (max-width: 768px)";
+@desktop:     ~"only screen and (min-width: 769px) and (max-width: 992px)";
+@desktop-lg:  ~"only screen and (min-width: 993px) and (max-width: 1199px)";
+@desktop-xl:  ~"only screen and (min-width: 1200px)";
+@full-xl:  ~"only screen and (min-width: 1200px)and (max-width: 1280px)";
+
+.font-size(@sv) {
+	@sizeValue: unit(@sv);
+	@remValue: (@sizeValue / @base-font-size);
+	font-size: unit(@sv,px);
+	font-size: unit(@remValue,rem);
+}
+
+.linkColor(@color){
+	color: @color;
+	&:hover, &:focus, &:active{
+	color: lighten(@color, 20%);
+	}
+}
+
+.whiteLink(@color){
+	color: @color;
+	&:hover, &:focus, &:active{
+	color: darken(@color, 20%);
+	}
+}
+
+.valign(@vheight) {
+	height:@vheight;
+	@media @mobile{
+		height:100%;
+	}
+	&:before{
+		content: '';
+		display: inline-block;
+		height: 100%; 
+		vertical-align: middle;
+	}
+}
+.valign-inner(@vwidth) {
+	display:inline-block;
+	vertical-align: middle; 
+	width: @vwidth;
+}
+
+/*********************************************************************************************
+Global/helper styles
+**********************************************************************************************/
+html, body{ 
+	font-size:@base-font-size;
+	font-family: @font-family;
+	background:@white;
+}
+
+/*Typography*/
+h1, h2, h3, h4, p{ font-family: @font-family}
+
+h1, .h1 {
+	.font-size(42px);
+}
+h2, .h2{
+	.font-size(32px);
+}
+
+h3, .h3{ .font-size(24px); }
+h4, .h4{ .font-size(20px); }
+p{ .font-size(14px;)}
+
+.disclaimer{
+	.font-size(12px);
+}
+.font-light{ font-weight: @light;}
+.font-bold { font-weight: @bold; }
+
+blockquote{
+	font-family:Georgia, serif;
+	footer{
+		font-family: @font-family;
+	}
+}
+/*Colors*/
+.white {
+	color: @white;
+}
+.black{
+	color:@black;
+}
+
+/*Helper classes*/
+.nopad{padding:0;}
+.nomargin{margin:0;}
+
+img { max-width: 100%}
+.media{
+	img{
+		max-width: initial;
+	}
+}
+
+.row{
+	&.row-spacing{
+		margin-bottom: @row-spacing;
+	}
+}
+a{
+	&:hover, &:focus, &:active, &:visited{
+		text-decoration: none;
+	}
+}
+
+/*********************************************************************************************
+Components
+**********************************************************************************************/
+
+

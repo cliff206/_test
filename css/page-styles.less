@@ -1,0 +1,141 @@
+@import "mixins.less";
+
+/* ----------------------
+Project: eFax US Rebuild
+Version: 2.0
+Designer: 
+Developer: Cliff Wong
+------------------------ */
+@import "mixins.less";
+@import "flexbox.less";
+
+@base-font-size:16px;
+@font-family: "Helvetica Neue",Helvetica,sans-serif;
+@white: #ffffff;
+@black:#000000;
+@dk-grey:#333333;
+@red:#cc0000;
+@navy:#003366;
+@teal:#006699;
+@green: #33cc00;
+
+@light:300;
+@bold: 700;
+
+@img-url: '../images';
+@row-spacing:40px;
+
+
+// Breakpoints
+// ------------------------- Source: http://blog.scur.pl/2012/06/variable-media-queries-less-css/
+@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+				~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+				~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+				~"only screen and (min-device-pixel-ratio: 1.5)";
+@mobile:      ~"only screen and (max-width: 768px)";
+@desktop:     ~"only screen and (min-width: 769px) and (max-width: 992px)";
+@desktop-lg:  ~"only screen and (min-width: 993px) and (max-width: 1199px)";
+@desktop-xl:  ~"only screen and (min-width: 1200px)";
+@full-xl:  ~"only screen and (min-width: 1200px)and (max-width: 1280px)";
+
+.font-size(@sv) {
+	@sizeValue: unit(@sv);
+	@remValue: (@sizeValue / @base-font-size);
+	font-size: unit(@sv,px);
+	font-size: unit(@remValue,rem);
+}
+
+.linkColor(@color){
+	color: @color;
+	&:hover, &:focus, &:active{
+		color: lighten(@color, 20%);
+		text-decoration: none;
+	}
+}
+
+.whiteLink(@color){
+	color: @color;
+	&:hover, &:focus, &:active{
+		color: darken(@color, 20%);
+		text-decoration: none;
+	}
+}
+
+/*********************************************************************************************
+Page/Location Specific Styles
+**********************************************************************************************/
+/* ------------------
+Features : mobile apps
+---------------------- */
+.features-mobile-apps{
+	.list-images{
+		li{
+			padding:15px 0;
+		}
+		img{
+			width:80%;
+		}
+	}
+}
+
+/* --------------------
+How it works 
+---------------------- */
+.how-it-works{
+	.compare-panel{
+		.compare-image{
+			min-height: 215px;
+		}
+	}
+}
+
+
+/* ------------------ 
+Help Center
+--------------------- */
+.help-center{
+	.sfsearchTxt{
+		width:90% !important;
+		margin:10px 0;
+	}
+	
+}
+.help-center-search{
+	.sfsearchSubmit{
+		background:@teal;
+		color:@white;
+		text-align: center;
+		.font-size(18px);
+		padding:.25em .5em;
+		.border-radius(.283em);
+		border:none;
+		&:hover, &:focus, &:active{
+			background:lighten(@teal, 20%);
+
+		}
+	}
+}
+.k-list-container{
+	border: 1px solid #ccc;
+	padding: 10px;
+	background: #fff;
+	font-size: 14px !important;
+	ul{
+		padding-left:0;
+
+		li{
+			list-style: none;
+			padding:5px;
+		}
+	}
+	.k-state-hover{
+		background:#333;
+		color:@white;
+	}
+}
+
+/*
+********************************************************************************************
+fonts
+********************************************************************************************
+*/
