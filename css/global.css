@@ -5,7 +5,7 @@ Global/helper styles
 html,
 body {
   font-size: 14px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "lato", Arial, sans-serif;
   background: #ffffff;
 }
 /*Typography*/
@@ -14,7 +14,7 @@ h2,
 h3,
 h4,
 p {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "lato", Arial, sans-serif;
 }
 h1,
 .h1 {
@@ -54,7 +54,7 @@ blockquote {
   font-family: Georgia, serif;
 }
 blockquote footer {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "lato", Arial, sans-serif;
 }
 /*Colors*/
 .white {
