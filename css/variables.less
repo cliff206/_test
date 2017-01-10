@@ -1,0 +1,71 @@
+
+@base-font-size:16px;
+/*@font-family: "Helvetica Neue",Helvetica,arial, sans-serif;*/
+@font-family:'Open Sans', sans-serif;
+/*@font-family: arial, sans-serif;*/
+@white: #ffffff;
+@off-white: #ebebeb;
+@black:#000000;
+@grey:#ccc;
+@dk-grey:#333333;
+@red:#cc0000;
+@navy:#003366;
+@teal:#006699;
+@green: #33cc00;
+@blue: #357CC3;
+
+
+@light:300;
+@bold: 700;
+
+//@img-url: '../images';
+@img-url: '/sf-images/default-source';
+@row-spacing:40px;
+
+
+// Breakpoints
+// ------------------------- Source: http://blog.scur.pl/2012/06/variable-media-queries-less-css/
+@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+				~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+				~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+				~"only screen and (min-device-pixel-ratio: 1.5)";
+@mobile:      ~"only screen and (max-width: 767px)";
+@desktop:     ~"only screen and (min-width: 768px) and (max-width: 991px)";
+@desktop-md:  ~"only screen and (min-width: 992px) and (max-width: 1199px)";
+@desktop-lg:  ~"only screen and (min-width: 1200px)and (max-width: 1280px)";
+@desktop-xl: ~"only screen and (min-width: 1280px)";
+@desktop-wide:  ~"only screen and (min-width: 1440px)";
+@not-mobile: ~"only screen and (min-width: 768px)";
+
+
+.font-size(@sv) {
+	@sizeValue: unit(@sv);
+	@remValue: (@sizeValue / @base-font-size);
+	font-size: unit(@sv,px);
+	font-size: unit(@remValue,rem);
+}
+
+.linkColor(@color){
+	color: @color;
+	&:visited{
+		color:@color;
+	}
+	&:hover, &:focus, &:active{
+		color: lighten(@color, 20%);
+		text-decoration: none;
+	}
+	
+}
+
+.whiteLink(@color){
+	color: @color;
+	&:visited{
+		color:@color;
+	}
+	&:hover, &:focus, &:active{
+		color: darken(@color, 20%);
+		text-decoration: none;
+	}
+	
+}
+

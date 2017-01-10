@@ -1,0 +1,89 @@
+/*
+********************************************************************************************
+Funnel Styles
+********************************************************************************************
+*/
+
+.funnel-steps{
+	background:#f8f8f8;
+	padding:20px 0;
+	margin-bottom:40px;
+	p{
+		margin:0;
+	}
+}
+.funnel-location{
+	height: 20px;
+	display: block;
+	border-radius: 4px;
+	margin-bottom: 15px;
+	&.step1{
+		background: #fe3535;
+		background: -moz-linear-gradient(left, #fe3535 0%, #e28b8b 33%, #cccccc 48%, #cccccc 100%);
+		background: -webkit-linear-gradient(left, #fe3535 0%, #e28b8b 33%, #cccccc 48%, #cccccc 100%);
+		background: linear-gradient(to right, #fe3535 0%, #e28b8b 33%, #cccccc 48%, #cccccc 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe3535', endColorstr='#cccccc', GradientType=1);
+
+	}
+	&.step2{
+		background: #fe3535;
+		background: -moz-linear-gradient(left, #fe3535 0%, #e28b8b 75%, #cccccc 81%, #cccccc 100%);
+		background: -webkit-linear-gradient(left, #fe3535 0%, #e28b8b 75%, #cccccc 81%, #cccccc 100%);
+		background: linear-gradient(to right, #fe3535 0%, #e28b8b 75%, #cccccc 81%, #cccccc 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe3535', endColorstr='#cccccc', GradientType=1)
+	}
+	&.step3{
+		background:#fe3535;
+	}
+}
+
+.plan-summary{
+	margin-bottom:30px;
+	.title{
+		font-weight: 600;
+	}
+	p{
+		margin:0 0 0 5px;
+	}
+}
+
+.sales-funnel{
+	margin-bottom:20px;
+	label.disclaimer{
+		a{
+			display: inherit;
+		}
+	}
+}
+.signup_title{
+	.font-size(20px);
+	font-weight: @bold;
+}
+
+/* ------------------------------------------------------------------------------------
+Port Your Number
+------------------------------------------------------------------------------------*/
+.port-number-pg{
+	.pano{
+		/*needs to be updated and moved following rebuild*/ 
+		background:url("@{img-url}/efax-features/pano/pano-port-number.jpg") no-repeat top center;
+		background-color: #63768d;
+		@media @mobile{
+			background:#63768d;
+		}
+		p{
+			.font-size(16px);
+		}
+	}
+}
+
+/* ------------------------------------------------------------------------------------
+Signup success pg
+--------------------------------------------------------------------------------------- */
+.signup-success{
+	.plan-summary{
+		p{
+			margin-bottom: 10px;
+		}
+	}
+}

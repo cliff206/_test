@@ -1,0 +1,1087 @@
+/* ----------------------
+Project: eFax US Rebuild
+Version: 3.0
+Designer: 
+Developer: Cliff Wong
+Updated: 01/07/17
+------------------------ */
+/***
+ *    ██████╗  ██████╗     ███╗   ██╗ ██████╗ ████████╗    ███████╗██████╗ ██╗████████╗     ██████╗███████╗███████╗
+ *    ██╔══██╗██╔═══██╗    ████╗  ██║██╔═══██╗╚══██╔══╝    ██╔════╝██╔══██╗██║╚══██╔══╝    ██╔════╝██╔════╝██╔════╝
+ *    ██║  ██║██║   ██║    ██╔██╗ ██║██║   ██║   ██║       █████╗  ██║  ██║██║   ██║       ██║     ███████╗███████╗
+ *    ██║  ██║██║   ██║    ██║╚██╗██║██║   ██║   ██║       ██╔══╝  ██║  ██║██║   ██║       ██║     ╚════██║╚════██║
+ *    ██████╔╝╚██████╔╝    ██║ ╚████║╚██████╔╝   ██║       ███████╗██████╔╝██║   ██║       ╚██████╗███████║███████║
+ *    ╚═════╝  ╚═════╝     ╚═╝  ╚═══╝ ╚═════╝    ╚═╝       ╚══════╝╚═════╝ ╚═╝   ╚═╝        ╚═════╝╚══════╝╚══════╝
+ *                                                                                                                 
+ *    ██╗   ██╗███████╗███████╗    ██╗     ███████╗███████╗███████╗     ██████╗ ███╗   ██╗██╗  ██╗   ██╗           
+ *    ██║   ██║██╔════╝██╔════╝    ██║     ██╔════╝██╔════╝██╔════╝    ██╔═══██╗████╗  ██║██║  ╚██╗ ██╔╝           
+ *    ██║   ██║███████╗█████╗      ██║     █████╗  ███████╗███████╗    ██║   ██║██╔██╗ ██║██║   ╚████╔╝            
+ *    ██║   ██║╚════██║██╔══╝      ██║     ██╔══╝  ╚════██║╚════██║    ██║   ██║██║╚██╗██║██║    ╚██╔╝             
+ *    ╚██████╔╝███████║███████╗    ███████╗███████╗███████║███████║    ╚██████╔╝██║ ╚████║███████╗██║              
+ *     ╚═════╝ ╚══════╝╚══════╝    ╚══════╝╚══════╝╚══════╝╚══════╝     ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚═╝              
+ *                      
+
+THIS IS SERIOUS - editing just the .css file will result in loss of all work. 
+
+
+
+ */
+/*@font-family: "Helvetica Neue",Helvetica,arial, sans-serif;*/
+/*@font-family: arial, sans-serif;*/
+/*********************************************************************************************
+Global/helper styles
+**********************************************************************************************/
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  /*line-height: 1em;*/
+}
+html,
+body {
+  background: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+/*confined containg for marketing team*/
+@media only screen and (min-width: 1200px)and (max-width: 1280px), only screen and (min-width: 1280px) {
+  .container {
+    width: 970px;
+  }
+}
+/*5 Column Layout*/
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.col-xs-15 {
+  width: 20%;
+  float: left;
+}
+@media (min-width: 768px) {
+  .col-sm-15 {
+    width: 20%;
+    float: left;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-15 {
+    width: 20%;
+    float: left;
+  }
+}
+@media (min-width: 1200px) {
+  .col-lg-15 {
+    width: 20%;
+    float: left;
+  }
+}
+/*Typography*/
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  font-family: 'Open Sans', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #000000;
+}
+h1,
+.h1 {
+  font-size: 42px;
+  font-size: 2.625rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 767px) {
+  h1,
+  .h1 {
+    font-size: 32px;
+    font-size: 2rem;
+  }
+}
+h2,
+.h2 {
+  font-size: 32px;
+  font-size: 2rem;
+}
+@media only screen and (max-width: 767px) {
+  h2,
+  .h2 {
+    font-size: 28px;
+    font-size: 1.75rem;
+  }
+}
+h2.subheadline,
+.h2.subheadline {
+  font-size: 26px;
+  font-size: 1.625rem;
+  margin-top: 0;
+  font-weight: 400;
+}
+h3,
+.h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+h4,
+.h4 {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+h5,
+.h5 {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+p {
+  font-size: 16px;
+  font-size: 1rem;
+}
+.disclaimer {
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+.font-light {
+  font-weight: 300;
+}
+.font-bold {
+  font-weight: 700;
+}
+blockquote {
+  font-family: Georgia, serif;
+}
+blockquote p {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+blockquote footer {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+/*Colors*/
+.white {
+  color: #ffffff;
+}
+.black {
+  color: #000000;
+}
+.red {
+  color: #cc0000;
+}
+.dk-grey {
+  color: #333333;
+}
+.navy {
+  color: #003366;
+}
+.teal {
+  color: #006699;
+}
+.green {
+  color: #33cc00;
+}
+/*Helper classes*/
+.nopad {
+  padding: 0;
+}
+.nomargin {
+  margin: 0;
+}
+img {
+  max-width: 100%;
+}
+.media img {
+  max-width: initial;
+}
+.row.row-spacing {
+  margin-bottom: 40px;
+}
+.clear {
+  clear: both;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.margin-tb {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/*Resposnive Text align-center*/
+@media only screen and (max-width: 767px) {
+  .col-xs-center {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .col-sm-center {
+    text-align: center;
+  }
+}
+a {
+  color: #006699;
+}
+a:visited {
+  color: #006699;
+}
+a:hover,
+a:focus,
+a:active {
+  color: #00aaff;
+  text-decoration: none;
+}
+a.cta {
+  background: #cc0000;
+  color: #ffffff;
+  text-align: center;
+  font-size: 24px;
+  font-size: 1.5rem;
+  padding: .25em .5em;
+  -webkit-border-radius: 0.283em;
+  border-radius: 0.283em;
+  background-clip: padding-box;
+}
+a.cta:visited {
+  color: #ffffff;
+}
+a.cta:hover,
+a.cta:focus,
+a.cta:active {
+  background: #ff0000;
+  color: #ffffff;
+}
+a.cta.cta-lg {
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+a.cta.blue-btn {
+  background: #006699;
+}
+a.cta.blue-btn:hover,
+a.cta.blue-btn:focus,
+a.cta.blue-btn:active {
+  background: #00aaff;
+}
+/*********************************************************************************************
+Components
+	Backgrounds
+	Footer
+	Header
+	Panel styles
+	Pano Styles
+	Pricing Panel
+	Search box - footer
+	Sponsor bar
+	Steps- hover box
+	Video - responsive embed
+*********************************************************************************************/
+/* ---------------------------------------------------------------------------------------
+Backgrounds
+---------------------------------------------------------------------------------------  */
+/*White bg*/
+.white-bg {
+  background: #ffffff;
+  padding: 30px 0;
+}
+.white-bg.header-flush {
+  padding-top: 0;
+}
+.white-bg h2 {
+  color: #003366;
+}
+/* Grey BG*/
+.grey-bg {
+  background: #f1f1f1;
+  padding: 30px 0;
+}
+.lt-grey-bg {
+  background: #fafafa;
+  padding: 30px 0;
+}
+/* --------------------------------------------------------------------------------------- 
+Footer
+--------------------------------------------------------------------------------------- */
+.footer {
+  background: #333333;
+  padding: 25px 0;
+  color: #ffffff;
+}
+.footer a {
+  color: #ebebeb;
+}
+.footer a:visited {
+  color: #ebebeb;
+}
+.footer a:hover,
+.footer a:focus,
+.footer a:active {
+  color: #00aaff;
+}
+.footer ul li {
+  margin: 10px 0;
+}
+.footer ul li a {
+  font-size: 13px;
+  font-size: 0.8125rem;
+}
+.footer ul li .submenu {
+  padding: 0;
+}
+.footer ul li .submenu li {
+  background: #4e4e4e;
+  margin: 0;
+}
+.footer ul li .submenu li a {
+  color: #ebebeb;
+}
+.footer ul li .submenu li a:visited {
+  color: #ebebeb;
+}
+.footer ul li .submenu li a:hover,
+.footer ul li .submenu li a:focus,
+.footer ul li .submenu li a:active {
+  color: #111;
+}
+.footer .connect {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  font-size: 0.8125rem;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .footer .connect {
+    text-align: center;
+  }
+}
+.footer .connect .social {
+  margin-bottom: 10px;
+}
+.footer .connect .social a {
+  color: #ffffff;
+  font-size: 16px;
+  font-size: 1rem;
+  margin-right: 5px;
+}
+.footer .connect .social a:visited {
+  color: #ffffff;
+}
+.footer .connect .social a:hover,
+.footer .connect .social a:focus,
+.footer .connect .social a:active {
+  color: #00aaff;
+}
+.footer .footer-apps {
+  font-size: 13px;
+  font-size: 0.8125rem;
+}
+.footer .footer-apps img {
+  margin-bottom: 10px;
+}
+.footer-banner {
+  background: #111;
+  padding: 30px 0;
+  color: #ebebeb;
+}
+@media only screen and (max-width: 767px) {
+  .footer-banner img {
+    width: 25%;
+  }
+}
+.footer-banner a {
+  color: #357cc3;
+}
+.footer-banner a:visited {
+  color: #357cc3;
+}
+.footer-banner a:hover,
+.footer-banner a:focus,
+.footer-banner a:active {
+  color: #81afdd;
+  text-decoration: none;
+}
+.footer-banner p {
+  margin-top: 10px;
+  font-size: 13px;
+  font-size: 0.8125rem;
+}
+.international-sites {
+  float: right;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .international-sites {
+    float: none;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .bottom-footer {
+    text-align: center;
+  }
+}
+.simple-footer {
+  padding: 20px 0;
+}
+/* ---------------------------------------------------------------------------------------
+Header
+--------------------------------------------------------------------------------------- */
+.header {
+  margin-top: 15px;
+}
+.header .logo {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: no-wrap;
+  -moz-flex-wrap: no-wrap;
+  -ms-flex-wrap: no-wrap;
+  flex-wrap: no-wrap;
+  -webkit-align-items: flex-end;
+  -moz-align-items: flex-end;
+  -ms-align-items: flex-end;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  float: left;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .header .logo img {
+    width: 85px;
+  }
+}
+.header .logo .tagline {
+  color: #000000;
+  font-style: italic;
+  font-size: 16px;
+  font-size: 1rem;
+  padding-bottom: 8px;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .header .logo .tagline {
+    padding-bottom: 2px;
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+.header .primary-nav .cta {
+  font-size: 16px;
+  font-size: 1rem;
+}
+.header .primary-nav .navbar-links {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: no-wrap;
+  -moz-flex-wrap: no-wrap;
+  -ms-flex-wrap: no-wrap;
+  flex-wrap: no-wrap;
+  -webkit-align-items: baseline;
+  -moz-align-items: baseline;
+  -ms-align-items: baseline;
+  align-items: baseline;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+}
+.header .primary-nav .navbar-links li.top-nav a {
+  color: #000000;
+  background: none;
+}
+.header .primary-nav .navbar-links li.top-nav a:visited {
+  color: #000000;
+}
+.header .primary-nav .navbar-links li.top-nav a:hover,
+.header .primary-nav .navbar-links li.top-nav a:focus,
+.header .primary-nav .navbar-links li.top-nav a:active {
+  color: #333333;
+  text-decoration: none;
+}
+.header .primary-nav .navbar-links li a.cta {
+  background: #cc0000;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  font-size: 1.125rem;
+  padding: .25em .5em;
+  -webkit-border-radius: 0.283em;
+  border-radius: 0.283em;
+  background-clip: padding-box;
+}
+.header .primary-nav .navbar-links li a.cta:hover,
+.header .primary-nav .navbar-links li a.cta:focus,
+.header .primary-nav .navbar-links li a.cta:active {
+  background: #ff0000;
+  color: #ffffff;
+}
+.header .secondary-nav {
+  background-color: #515151;
+}
+.header .secondary-nav li a {
+  color: #ffffff;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .header .secondary-nav li a {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+.header .secondary-nav li a:hover,
+.header .secondary-nav li a:focus,
+.header .secondary-nav li a:active {
+  color: #00aaff;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 1200px)and (max-width: 1280px), only screen and (min-width: 1280px) {
+  .header .secondary-nav .navbar-nav {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: no-wrap;
+    -moz-flex-wrap: no-wrap;
+    -ms-flex-wrap: no-wrap;
+    flex-wrap: no-wrap;
+    -webkit-align-items: baseline;
+    -moz-align-items: baseline;
+    -ms-align-items: baseline;
+    align-items: baseline;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .header .secondary-nav .navbar-nav li {
+    float: none;
+  }
+}
+.header .secondary-nav .mobile-search {
+  margin: 10px ;
+}
+.header nav {
+  margin-bottom: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-clip: padding-box;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .header nav {
+    min-height: 0;
+  }
+}
+.header .nav-btn {
+  background: #515151;
+  margin-top: 0;
+  padding: 6px 10px;
+}
+.header .nav-btn .bars-label {
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+.header .nav-btn .btn-bars {
+  display: inline-block;
+}
+.header .nav-btn .btn-bars .icon-bar {
+  background-color: #ffffff;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .header .mobile-head {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+  }
+}
+.header .mobile-dropdown-search {
+  margin-bottom: 10px;
+}
+/*Collapse navbar button override*/
+@media (max-width: 992px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-collapse.collapse.in {
+    display: block!important;
+  }
+  .navbar-nav {
+    float: none!important;
+    margin: 7.5px -15px;
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+/* ---------------------------------------------------------------------------------------
+Panel styles
+--------------------------------------------------------------------------------------- */
+.panel-heading.bg-white {
+  background: #ffffff;
+}
+/* --------------------------------------------------------------------------------------- 
+Pano Styles
+---------------------------------------------------------------------------------------  */
+.pano {
+  padding: 40px 0;
+  background: #003366;
+}
+@media only screen and (max-width: 767px) {
+  .pano {
+    padding: 10px 0;
+  }
+  .pano h1 {
+    margin-top: 10px;
+  }
+}
+.pano p {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+.pano a {
+  padding: 8px 50px;
+}
+/* --------------------------------------------------------------------------------------- 
+Pricing Panel
+---------------------------------------------------------------------------------------  */
+.pricing-panel li {
+  padding: 15px 0;
+  border-bottom: 1px solid #cccccc;
+}
+/* --------------------------------------------------------------------------------------- 
+Sales Phone Number
+---------------------------------------------------------------------------------------  */
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .sales-number {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+/* ---------------------------------------------------------------------------------------
+Search box - footer
+--------------------------------------------------------------------------------------- */
+.search-area {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  position: relative;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .search-area {
+    text-align: center;
+  }
+}
+.search-area .search {
+  padding: 12px 20px 12px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px 1px #f0f0f0 inset;
+  -moz-box-shadow: 0 0 5px 1px #f0f0f0 inset;
+  box-shadow: 0 0 5px 1px #f0f0f0 inset;
+  line-height: 22px;
+  height: 22px;
+  color: #000000;
+  width: 100%;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .search-area .search {
+    text-align: center;
+    width: auto;
+  }
+}
+.search-area #btn-head-search {
+  position: absolute;
+  z-index: 10;
+  color: #333333;
+  top: 3px;
+  right: 4px;
+}
+/* --------------------------------------------------------------------------------------- 
+Sponsor bar
+--------------------------------------------------------------------------------------- */
+.sponsor-bar {
+  padding: 20px 0;
+}
+.sponsor-bar .sponsor-list {
+  /*.flex-display(flex);
+		.flex-direction(row);
+		.flex-wrap(no-wrap);
+		.justify-content(space-around);*/
+}
+.sponsor-bar .sponsor-list div {
+  /*.flex-grow(1);
+			.flex-shrink(1);*/
+  /*width:19%;
+			display: inline-block;*/
+}
+/* --------------------------------------------------------------------------------------- 
+Steps - hover box
+---------------------------------------------------------------------------------------*/
+/* hover steps */
+.step-border {
+  border-left: 1px solid #D2D2D2;
+  border-bottom: 1px solid #D2D2D2;
+  border-right: 1px solid #D2D2D2;
+  background-color: #F5F5F5;
+}
+.step-border.first-step-border {
+  border-top: 1px solid #d2d2d2;
+}
+.step-container {
+  padding: 20px;
+  opacity: .3;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  -ms-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+}
+.step-container p {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  color: #212121;
+}
+.step-container h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #003366;
+}
+/* Step Hover */
+.steps-img-outer img {
+  position: absolute;
+  /*top: 80px;*/
+}
+.step_active {
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  -ms-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+}
+/* --------------------------------------------------------------------------------------- 
+Video - responsive embed
+---------------------------------------------------------------------------------------*/
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/*********************************************************************************************
+Page/Location Specific Styles
+	eFax Messenget
+	Features : mobile apps
+	Funnel
+	How it works 
+	Help Center
+	Homepage 
+	Port your Number pg
+	Signup success pg
+**********************************************************************************************/
+/* ------------------------------------------------------------------------------------
+eFax Messenger
+------------------------------------------------------------------------------------*/
+.messenger-pg .pano {
+  /*needs to be updated and moved following rebuild*/
+  background: url("/sf-images/default-source/efax-features/pano/pano-messenger.jpg") no-repeat top center;
+  background-color: #63768d;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .messenger-pg .pano {
+    background: #63768d;
+  }
+}
+.messenger-pg .pano p {
+  font-size: 16px;
+  font-size: 1rem;
+}
+/* ------------------------------------------------------------------------------------
+Features : mobile apps
+------------------------------------------------------------------------------------*/
+.features-mobile-apps .list-images li {
+  padding: 15px 0;
+}
+.features-mobile-apps .list-images img {
+  width: 80%;
+}
+/* ------------------------------------------------------------------------------------
+Funnel 
+--------------------------------------------------------------------------------------- */
+.funnel-steps {
+  background: #f8f8f8;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+.funnel-steps p {
+  margin: 0;
+}
+.funnel-location {
+  height: 20px;
+  display: block;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+.funnel-location.step1 {
+  background: #fe3535;
+  background: -moz-linear-gradient(left, #fe3535 0%, #e28b8b 33%, #cccccc 48%, #cccccc 100%);
+  background: -webkit-linear-gradient(left, #fe3535 0%, #e28b8b 33%, #cccccc 48%, #cccccc 100%);
+  background: linear-gradient(to right, #fe3535 0%, #e28b8b 33%, #cccccc 48%, #cccccc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe3535', endColorstr='#cccccc', GradientType=1);
+}
+.funnel-location.step2 {
+  background: #fe3535;
+  background: -moz-linear-gradient(left, #fe3535 0%, #e28b8b 75%, #cccccc 81%, #cccccc 100%);
+  background: -webkit-linear-gradient(left, #fe3535 0%, #e28b8b 75%, #cccccc 81%, #cccccc 100%);
+  background: linear-gradient(to right, #fe3535 0%, #e28b8b 75%, #cccccc 81%, #cccccc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe3535', endColorstr='#cccccc', GradientType=1);
+}
+.funnel-location.step3 {
+  background: #fe3535;
+}
+.plan-summary {
+  margin-bottom: 30px;
+}
+.plan-summary .title {
+  font-weight: 600;
+}
+.plan-summary p {
+  margin: 0 0 0 5px;
+}
+.sales-funnel {
+  margin-bottom: 20px;
+}
+.sales-funnel label.disclaimer a {
+  display: inherit;
+}
+.signup_title {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+/* ------------------------------------------------------------------------------------
+How it works 
+------------------------------------------------------------------------------------ */
+.how-it-works .compare-panel .compare-image {
+  min-height: 215px;
+}
+/* ------------------------------------------------------------------------------------ 
+Help Center
+------------------------------------------------------------------------------------ */
+.help-center .sfsearchTxt {
+  width: 90% !important;
+  margin: 10px 0;
+}
+.help-center-search .sfsearchSubmit {
+  background: #006699;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  font-size: 1.125rem;
+  padding: .25em .5em;
+  -webkit-border-radius: 0.283em;
+  border-radius: 0.283em;
+  background-clip: padding-box;
+  border: none;
+}
+.help-center-search .sfsearchSubmit:hover,
+.help-center-search .sfsearchSubmit:focus,
+.help-center-search .sfsearchSubmit:active {
+  background: #00aaff;
+}
+.k-list-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #fff;
+  font-size: 14px !important;
+}
+.k-list-container ul {
+  padding-left: 0;
+}
+.k-list-container ul li {
+  list-style: none;
+  padding: 5px;
+}
+.k-list-container .k-state-hover {
+  background: #333;
+  color: #ffffff;
+}
+/* ------------------------------------------------------------------------------------
+Homepage 
+------------------------------------------------------------------------------------ */
+.homepage {
+  /* ------ WHY SECTION ------*/
+  /* ------ FEATURES SECTION ------*/
+  /* ------ Banner Content ------*/
+  /* ------ CAROUSEL STYLES ------*/
+  /* Carousel Chevron Right Color */
+  /* Carousel Chevron Right Hover */
+  /* Carousel Chevron Left Color */
+  /* Carousel Chevron Left Hover */
+}
+@media only screen and (max-width: 767px) {
+  .homepage .why-section {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .homepage .features-section h2,
+  .homepage .home-features-title,
+  .homepage .home-features-desc,
+  .homepage .features-section-learn-more {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .homepage .banner-content h2 {
+    text-align: center;
+  }
+}
+.homepage .banner-content .bottom-cta a {
+  margin-top: 10px;
+}
+.homepage div#carousel-homepage.carousel.slide {
+  margin: 10px 0px;
+}
+.homepage .carousel-inner img {
+  margin-left: auto;
+  margin-right: auto;
+}
+.homepage a.carousel-control {
+  top: -20px;
+}
+.homepage #carousel-homepage a.right.carousel-control {
+  background-image: initial;
+  color: #9d9d9d;
+}
+.homepage #carousel-homepage a.right.carousel-control:hover {
+  color: #333;
+}
+.homepage #carousel-homepage a.left.carousel-control {
+  background-image: initial;
+  color: #9d9d9d;
+}
+.homepage #carousel-homepage a.left.carousel-control:hover {
+  color: #333;
+}
+/* ------------------------------------------------------------------------------------
+International Numbers page
+------------------------------------------------------------------------------------*/
+.international-numbers-pg .pano {
+  /*needs to be updated and moved following rebuild*/
+  background: url("/sf-images/default-source/efax-features/pano/pano-international-numbers.jpg") no-repeat top left -50px;
+  background-color: #63768d;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .international-numbers-pg .pano {
+    background: #63768d;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .international-numbers-pg .pano {
+    background-position: top center;
+  }
+}
+.international-numbers-pg .pano p {
+  font-size: 16px;
+  font-size: 1rem;
+}
+/* ------------------------------------------------------------------------------------
+Port Your Number
+------------------------------------------------------------------------------------*/
+.port-number-pg .pano {
+  /*needs to be updated and moved following rebuild*/
+  background: url("/sf-images/default-source/efax-features/pano/pano-port-number.jpg") no-repeat top center;
+  background-color: #63768d;
+}
+@media only screen and (max-width: 767px) {
+  .port-number-pg .pano {
+    background: #63768d;
+  }
+}
+.port-number-pg .pano p {
+  font-size: 16px;
+  font-size: 1rem;
+}
+/* ------------------------------------------------------------------------------------
+Signup success pg
+--------------------------------------------------------------------------------------- */
+.signup-success .plan-summary p {
+  margin-bottom: 10px;
+}
+/* --------------------------------------------------------------------------
+ IE fixes
+ --------------------------------------------------------------------------- */
+.no-flexbox {
+  /*primary nav :search box*/
+  /*secondary nav*/
+}
+.no-flexbox .primary-nav .navbar-links li {
+  float: left;
+}
+.no-flexbox .primary-nav .navbar-links .search-area {
+  margin-top: 10px;
+}
+.no-flexbox .header .secondary-nav .navbar-nav {
+  float: none;
+  width: 550px;
+  margin: 0 auto;
+}
+.no-flexbox .header .secondary-nav .navbar-nav li {
+  float: left;
+}
