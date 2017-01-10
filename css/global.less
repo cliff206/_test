@@ -110,12 +110,32 @@ blockquote{
 /*Helper classes*/
 .nopad{padding:0;}
 .nomargin{margin:0;}
+.text-shadow{
+	.text-shadow(1px 1px 1px #666);
+}
 
-img { max-width: 100%;}
-.media{
-	img{
-		max-width: initial;
+.right-rail{
+	border-right:1px solid @footer-grey;
+	@media @mobile, @desktop-sm{
+		border-right:none;
 	}
+	.row{
+		padding-right: 15px;
+	}
+}
+
+.left-rail{
+	border-right:1px solid @footer-grey;
+	@media @mobile, @desktop-sm{
+		border-right:none;
+	}
+	.row{
+		padding-left: 15px;
+	}
+}
+
+.flip{
+	.transform(scaleX(-1));
 }
 
 .row{
@@ -142,7 +162,7 @@ img { max-width: 100%;}
 	}
 }
 .col-sm-center{
-	@media @desktop{
+	@media @desktop-sm{
 		text-align: center;
 	}
 }
@@ -164,6 +184,7 @@ a{
 		&:hover, &:focus, &:active{
 			background: #ff0000;
 			color:@white;
+			.transition(@transition-time);
 		}
 		&.cta-lg{
 			.font-size(28px);
@@ -172,6 +193,7 @@ a{
 			background:@teal;
 			&:hover, &:focus, &:active{
 				background:lighten(@teal, 20%);
+				.transition(@transition-time);
 
 			}
 		}
